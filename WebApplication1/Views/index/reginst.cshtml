@@ -1,0 +1,126 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>reginst</title>
+    <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #bg_img {
+            margin-left: 220px;
+            background-image: url(../../Content/img/背景1.png);
+            height: 780px;
+            width: 80%;
+            background-repeat: no-repeat;
+        }
+
+        .box {
+            padding-top: 300px;
+            padding-left: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div style="margin-left:200px;"><img src="~/Content/img/导航栏2.png" alt="Alternate Text" /></div>
+        <br />
+        <div id="bg_img" >
+           
+            <div class="box" >
+                <form id="form" action="/index/Adduser" method="post">
+                    &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp; 用户名：<input type="text" id="n" name="account" value="" style="width: 250px;height:28px;" />
+                    <br />
+                    <br />
+                    &nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; 密码：<input type="text" id="p" name="password" value="" style="width: 250px;height:28px;" />
+                    <br />
+                    <br />
+                    再次输入密码 <input type="text" name="passwords" value="" style="width: 250px;height:28px;" />
+                    <br />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;  &nbsp;&nbsp;昵称：<input type="text"  name="nichen" value="" style="width: 250px;height:28px;" />
+                    <br />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;  &nbsp;&nbsp;性别：<input type="text" name="sex" id="s" value="" style="width: 250px;height:28px;" />
+                    <br />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;出生日期：<input type="text" name="brithday" value="" id="b" style="width: 250px;height:28px;" />
+                    <br />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;验证码：<input type="text"  id="input_num" name="validatestr" value="" style="width: 250px;height:28px;" /><span id="num"></span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;<button type="button" onclick="num()">换一张</button>
+                    <br />
+                    <br />
+                    <input type="submit" id="tijiao" name="name" value="确定" style="background-color:cornflowerblue;color:white; width:150px;height:35px; margin-left:140px;"  onclick="validate1()"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.js"></script>@*对于这个顺序是要牢记的先是导入的是jq的框架然后是导入的是验证的*@
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript">
+        var num1= "nnnnnnnnnn";
+        $(function () {
+            $("#form").validate({
+                rules: {
+                    account: { required: true },
+                    password: { required: true },
+                    passwords: { required: true },
+                    nichen: { required: true },
+                    sex: { required: true },
+                    brithday:{ required: true },
+                    validatestr:{required:true}
+
+                }, messages: {
+                    account: { required: "请输入用户名" },
+                    password: { required: "请输入密码" },
+                    passwords: { required: "请再次输入密码" },
+                    nichen: { required: "请输入昵称" },
+                    sex: { required: "请输入性别" },
+                    brithday: { required: "请输入生日" },
+                    validatestr: { required: "请输入验证码" }
+                }
+
+            });
+
+        });
+        function validate1() {
+            var s = $("#input_num").text();
+            var s = $("#input_num").val();
+            console.log(s);
+            if (s == $("#num").html()) {
+               
+                location.href = "index/Index";
+            } else {
+                alert('验证码错误');
+            }
+        }
+        function num() {
+            var n = ((Math.random() * (20 - 10) + 10).toFixed(0));
+            var m = ((Math.random() * (20 - 10) + 10).toFixed(0));
+            num1 = "" + n + m;
+           // console.log($("#num").html());
+            $("#num").html(num1);
+          
+        }
+        //$("#tijiao").click(function () {
+        //    var a = $("#a").val();
+        //    var b = $("#b").val();
+        //    var s = $("#s").val();       
+        //    var p = $("#p").val();
+        //    Location.href = "index/Adduser?account=" + a + "&password=" + p + "&nichen= &sex=" + s +"&brithday="+b;
+        //});
+    </script>
+</body>
+</html>

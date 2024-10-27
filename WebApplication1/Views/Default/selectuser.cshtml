@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "selectuser";
+    Layout = "~/Views/Shared/ht_LayoutPage1.cshtml";
+}
+
+<div style="margin:10px ;border-radius:10px;border:1px solid #808080; margin-top:50px;margin-left:300px; width:770px;">
+    <div id="conten_box"></div>
+    <input type="text" name="name" id="text" value="" style="margin-left:100px; margin-top:40px;margin-bottom:30px;height:30px;width:400px;" />&nbsp;<input type="submit" id="button" name="name" style="width:90px;height:35px;" value="查询" />(可通过昵称或者账号查询)
+    <table>
+        <tr class="tr" style="background-color:#e0dada; text-align:center ;">
+
+           
+            <td>全选 <input type="checkbox" id="all" name="name" value="" onclick="set()" /></td>
+            <td>账号</td>
+            <td>昵称</td>
+            <td>性别</td>
+            <td>出生日期</td>
+            <td>身份</td>
+            <td><a href="#">删除选中内容</a></td>
+            <td><a>修改</a></td>
+
+        </tr>
+        @*这边就是绑定的东西了*@
+        @foreach (var item in ViewBag.user as List<model.t_user>)
+        {
+        <tr style="height:50px;text-align:center;">
+
+            
+            <td style="width:105px;"><input type="checkbox" name="name" value="" /></td>
+            <td style="width:105px;">@item.account</td>
+            <td style="width:105px;">@item.nickname</td>
+            <td style="width:105px;">@item.sex</td>
+            <td style="width:105px;">@item.birthday</td>
+            
+            @{if (item.state == "1")
+                {
+                    item.state = "管理员";
+                }
+                else
+                {
+                    item.state = "普通用户";
+                } }
+            <td style="width:105px;">@item.state</td>
+            <td style="width:105px;"><a onclick="remove('@item.account')">删除</a></td>
+            <td style="width:105px;"><a href="/Default/Updatauser?name=@item.account">修改</a></td>
+        </tr>
+        }
+
+
+    </table>
+</div>
+<script type="text/javascript" src="~/Scripts/jquery-3.3.1.js">
+</script>
+<script>
+    $("#button").click(function () {
+        var text = $("#text").val();
+        location.href = "/Default/selectuser?name=" + text;
+
+    });
+    var num = 1;
+
+    function set() {
+        if (num%2==0) {
+            var a = $("input[name=name]");
+            for (var i = 0; i < a.length; i++) {
+                a[i].checked = false;
+            }
+            num++;
+        } else {
+            var a = $("input[name=name]");
+            for (var i = 0; i < a.length; i++) {
+                a[i].checked = true;
+            }
+            num++;
+        }
+       
+    }
+    function remove(obj) {
+
+        location.href = "/Default/remove?num=1&value=" + obj;
+
+    }
+</script>
+

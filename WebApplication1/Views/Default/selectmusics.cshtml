@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "selectmusics";
+    Layout = "~/Views/Shared/ht_LayoutPage1.cshtml";
+}
+
+<div style="margin:10px ;border-radius:10px;border:1px solid #808080; margin-top:50px;margin-left:300px; width:790px;">
+    <div id="conten_box"></div>
+    <input type="text" name="name" value="" id="text" style="margin-left:100px; margin-top:40px;margin-bottom:30px;height:30px;width:400px;" />&nbsp;<input type="submit" name="name" id="button" style="width:90px;height:35px;" value="查询" />(可通过昵称或者账号查询)
+    <table>
+        <tr class="tr" style="background-color:#e0dada;text-align:center;">
+            <td>序号</td>
+            <td>全选 <input type="checkbox" name="name" value=""  onclick="set()"/> </td>
+            <td>歌曲名</td>
+            <td>歌手名</td>
+            <td>分类</td>
+            <td>试听</td>
+            <td>大小</td>
+            <td>上传人</td>
+            <td><a href="#">删除选中内容</a></td>
+        </tr>
+        @*这边就是绑定的东西了*@
+        @foreach (var item in ViewBag.musics as List<model.t_chanson>)
+        {
+            <tr style="height:50px;text-align:center;">
+                <td style="width:105px;">@item.id</td>
+                <td style="width:105px;"><input type="checkbox" name="name" value="" /></td>
+                <td style="width:105px;">@item.name</td>
+                <td style="width:105px;">@item.singer</td>
+                <td style="width:105px;">中国</td>
+                <td style="width:105px;"><a>试听</a></td>
+                <td style="width:105px;">@item.filesize</td>
+                <td style="width:105px;">@item.account</td>
+                <td style="width:105px;"><a onclick="remove('@item.name')">删除</a></td>
+                <td style="width:105px;"><a href="/Default/Updatamusic?name=@item.id">修改</a></td>
+            </tr>
+        }
+
+
+    </table>
+
+</div>
+<script type="text/javascript" src="~/Scripts/jquery-3.3.1.js">
+</script>
+<script>
+    $("#button").click(function () {
+        var text = $("#text").val();
+        location.href = "/Default/selectmusics?name=" + text;
+
+    });
+    var num = 1;
+    function remove(obj) {
+
+        location.href = "/Default/remove?num=2&value=" + obj;
+
+    }
+    function set() {
+        if (num % 2 == 0) {
+            var a = $("input[name=name]");
+            for (var i = 0; i < a.length; i++) {
+                a[i].checked = false;
+            }
+            num++;
+        } else {
+            var a = $("input[name=name]");
+            for (var i = 0; i < a.length; i++) {
+                a[i].checked = true;
+            }
+            num++;
+        }
+
+    }
+</script>

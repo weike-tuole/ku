@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<link href="~/Content/src/css/layui.css" rel="stylesheet" media="all" />
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div><img src="~/Content/img/导航栏3.png" alt="" style="padding-left: 200px;" /></div>
+    <div style="display: flex;height: 900px;">
+        <div style="flex:2; border:5px solid #1E9FFF; border-right:none ;border-bottom: none; border-left: none; border-radius: 5px;">
+            <div id="test1"></div>
+
+        </div>
+
+        <div style="flex: 10; border: 5px solid #1E9FFF;border-right:none ;border-bottom: none;border-radius: 5px;"> @RenderBody()</div>
+    </div>
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="~/Content/src/layui.js"></script>
+    <script type="text/javascript">
+        layui.use('tree', function () {
+            var tree = layui.tree;
+            //渲染
+            var inst1 = tree.render({
+                elem: '#test1'  //绑定元素
+                , isjump: true
+                , data: [{
+                    title: '后台管理' //一级菜单
+                    , children: [{
+                        title: '用户管理' //二级菜单
+                        , children: [{
+                            id: '1',
+                            title: '用户管理' //三级菜单
+                            , href: "/Default/selectuser"
+                        }]
+                    }, {
+                        title: '歌曲管理' //二级菜单
+                        , children: [{
+                            id: '2',
+                            title: '歌曲管理'//三级菜单
+                            , href: "/Default/selectmusics"
+                        }]
+                    }]
+                }]
+                , click: function (obj) {//原来是这样的用的 直接在后面跟着方法可以获取里面的参数
+
+                    location.href = obj.data.href;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

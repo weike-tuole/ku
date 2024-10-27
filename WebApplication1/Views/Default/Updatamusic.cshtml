@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Updatamusic</title>
+</head>
+<body>
+    @foreach (var item in ViewBag.musics as List<model.t_chanson>)
+    {
+        <div>
+            <form action="/Default/Updatamusic" method="post">
+                <div>序号：<input type="text" name="id" value="@item.id" /></div>
+
+                <div>
+                    歌曲名：<input type="text" name="musicname" value="@item.name" />
+                </div>
+                <div>
+                    歌手名：<input type="text" name="signername" value="@item.singer" />
+                </div>
+                <div>
+                    分类：<input type="text" name="name" value="中国" />
+                </div>
+                <div>
+                    <input type="submit" name="name" value="修改" />
+                </div>
+            </form>
+        </div>
+    }
+</body>
+</html>

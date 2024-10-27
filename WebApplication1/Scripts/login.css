@@ -1,0 +1,444 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+.a:hover {
+    color: red;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid1 {
+    flex: 1;
+}
+
+.grid2 {
+    flex: 2;
+}
+
+.grid3 {
+    flex: 3;
+}
+
+.grid4 {
+    flex: 4;
+}
+
+.grid5 {
+    flex: 5;
+}
+
+.grid6 {
+    flex: 6;
+}
+
+.text_search {
+    height: 40px;
+    width: 500px;
+    border-color: dodgerblue;
+}
+
+.text_search_button {
+    color: white;
+    background-color: #1E90FF;
+    height: 44px;
+    width: 80px;
+    border-color: dodgerblue;
+}
+
+.half {
+    padding-top: 20px;
+    text-align: center;
+    margin-left: 200px;
+    width: 1200px;
+    line-height: 60px;
+    height: 60px;
+}
+
+.half_3_button {
+    position: relative;
+    top: -40px;
+    left: 170px;
+}
+
+    .half_3_button button {
+        color: dodgerblue;
+        border-color: dodgerblue;
+        height: 50px;
+        width: 70px;
+    }
+.box1_div {
+ height:100px;
+ line-height:100px;
+}
+.box_div:hover {
+    background-color: deepskyblue;
+}
+.half_3_textName {
+    margin-top: -10px;
+    height: 30px;
+    color: dodgerblue;
+    border-color: dodgerblue;
+}
+
+    .half_3_textName input {
+        color: dodgerblue;
+        border-color: dodgerblue;
+    }
+
+.half_3_textPwd input {
+    color: dodgerblue;
+    border-color: dodgerblue;
+}
+
+.half_3_textPwd {
+    height: 25px;
+    color: dodgerblue;
+    border-color: dodgerblue;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+    line-height: 50px;
+}
+
+.ul {
+    margin-top: 20px;
+}
+
+.box_border {
+    padding-top: 10px;
+    height: 70px;
+    line-height: 50px;
+    border: solid #808080 2px;
+}
+
+.box_border1 {
+    padding-top: 10px;
+    height: 70px;
+    line-height: 50px;
+    border-bottom: solid #808080 2px;
+    border-left: solid #808080 2px;
+    border-right: solid #808080 2px;
+}
+
+.box_border2 {
+    line-height: 50px;
+    border-bottom: solid #1E90FF 2px;
+}
+
+.ul ul {
+    height: 50px;
+    background-color: #1E90FF;
+    border: solid #808080 2px;
+    color: white;
+}
+.li6:hover {
+    background-color:none;
+}
+    .ul ul li:hover {
+        background: rgba(0, 126, 220, 0.5);
+    }
+
+#li_6:hover {
+    background-color: #1E90FF;
+}
+
+.li_6:hover {
+    background-color: #1E90FF;
+}
+
+.li_6_color_wit:hover a {
+    background-color: #1E90FF;
+    color: white;
+}
+
+#li_5:hover {
+    background-color: #1E90FF;
+}
+
+.a_padding {
+    padding: 15px 30px;
+}
+
+.a_padding2 {
+    padding: 15px 15px;
+}
+
+.advisterment {
+    margin: 15px;
+    margin-left: 135px;
+}
+
+    .advisterment img {
+        width: 1600px;
+        height: 500px;
+    }
+
+.hover_blue:hover  {
+    background-color: dodgerblue;
+}
+
+.box_padding_left20 {
+    padding-left: 20px;
+}
+
+.box_padding_left200 {
+    padding-left: 200px;
+}
+
+.box_padding_topb40 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#divLoginYes {
+    display: none;
+}
+
+#divLoginNo {
+    display: block;
+}
+
+.box_margin_left200 {
+    margin-left: 200px;
+}
+
+.span_fontsize20 {
+    font-size: 20px;
+}
+
+.color_gray {
+    color: #808080;
+}
+
+.bg_white {
+    background-color: white;
+}
+
+hr {
+    border-color: #1E90FF;
+}
+
+.hr_2 {
+    border-color: #1E90FF;
+    width: 1600px;
+}
+
+.content {
+    margin-left: 130px;
+}
+
+.box_personal {
+    width: 1600px;
+    height: 190px;
+}
+
+.box_padding_topb20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.content_box1 {
+    text-align: center;
+    background: #F5F5F5;
+    height: 40px;
+    line-height: 40px;
+}
+
+.content_box1_copy {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+
+.hr_nostyle {
+    border-color: #808080;
+}
+
+.content_box3 {
+    background: #F5F5F5;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 20px;
+}
+
+.content_box4 {
+    background: #F5F5F5;
+    height: 40px;
+    line-height: 40px;
+}
+
+.content_box1 div a {
+    color: black;
+}
+
+.content_box2 {
+    margin-top: 20px;
+}
+
+    .content_box2 div img {
+        width: 450px;
+        height: 220px;
+    }
+
+.block_in {
+    display: inline-block;
+    height: 24px;
+    width: 40px;
+}
+
+.block_in_1 {
+    display: inline-block;
+}
+
+.bg_orgent {
+    background-color: #FF904D;
+}
+
+.bg_blue {
+    background-color: #84C2FF;
+}
+
+.bg_gray {
+    background: #F9F9F9;
+}
+.bg_grayjianbian{
+    background:linear-gradient(90deg ,dodgerblue, darkgray ,dodgerblue);
+}
+
+.span_text {
+    text-align: center;
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+}
+
+.span_1 {
+    margin-left: 245px;
+}
+
+.span_2 {
+    margin-left: 230px;
+}
+
+.span_3 {
+    margin-left: 213px;
+}
+
+.h4 {
+    font-size: 18px;
+    color: #FF904D;
+}
+
+.color_organ {
+    color: #FF904D;
+}
+
+.color_blue {
+    color: #84C2FF;
+}
+
+.color_red {
+    color: red;
+}
+
+.hr_1 {
+    border-color: #F5F5F5;
+    width: 435px;
+    border: 1px;
+    border-style: dotted;
+}
+
+.content2 {
+    text-align: center;
+    height: 80px;
+}
+
+.content3 {
+    text-align: center;
+}
+
+    .content3 img {
+        text-align: center;
+        width: 180px;
+        height: 200px;
+    }
+
+.button {
+  
+    width: 80px;
+    height: 120px;
+    border: none;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-top: 60px;
+    background-size: 100px 120px;
+}
+
+.button1 {
+ 
+    width: 90px;
+    height: 120px;
+    border: none;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-top: 60px;
+    margin-right: 140px;
+    background-size: 110px 125px;
+}
+
+.text_left {
+    text-align: left;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.block_in_2 {
+    display: inline-block;
+    padding-left: 60px;
+    color: gray;
+}
+
+.color_wit {
+    color: white;
+}
+
+.border_none {
+    border: none;
+}
+
+.border_radius15 {
+    border-radius: 15px;
+}
+
+.border_color_blue {
+    border-color: #84C2FF;
+}
+
+.bg_deepgray {
+    background-color: darkgray;
+}
+
+.button4 {
+    height: 40px;
+    width: 100px;
+    color: white;
+    margin-left: 30px;
+    border: 0px;
+}
+
+#box_divmmodel div {
+    height: 71px;
+    width: 80px;
+}

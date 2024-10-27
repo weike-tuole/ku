@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Updatauser</title>
+</head>
+<body>
+    @foreach (var item in ViewBag.user as List<model.t_user>)
+    {
+        <div>
+            <form action="/Default/Updatauser" method="post">
+                <div>
+                    账号：<input type="text" name="acc" value="@item.account" />
+                </div>
+                <div>
+                    密码：<input type="text" name="pwd" value="@item.password" />
+                </div>
+                <div>
+                    管理员身份：<input type="text" name="id" value="@item.state" />（管理员选择1，用户为0）
+                </div>
+                <div>
+                    昵称：<input type="text" name="name" value="@item.nickname" />
+                </div>
+                <div>
+                    性别：<input type="text" name="sex" value="@item.sex" />
+                </div>
+                <div>
+                    生日：<input type="text" name="bri" value="@item.birthday" />
+                </div>
+                <div>
+                    <input type="submit" name="name" value="修改" />
+                </div>
+            </form>
+        </div>
+    }
+</body>
+</html>
